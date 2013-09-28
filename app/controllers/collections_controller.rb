@@ -80,7 +80,7 @@ class CollectionsController < ApplicationController
                            :port      => 587,
                            :domain    => "galiro.com",
                            :user_name => "galiro",
-                           :password  => "ggrules09",
+                           :password  => "",
                            :authentication => 'plain',
                            :enable_starttls_auto => true }
     end
