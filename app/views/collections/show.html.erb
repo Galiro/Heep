@@ -1,0 +1,95 @@
+
+
+<h1><%= @collection.name %></h1>
+
+<div class="gridly">
+
+
+<% @collection.rocks.each do |collection| %>
+      
+      <div class="brick small">
+
+        <div class="col-md-12">
+          <h2><%= collection.name %></h2>
+          
+        </div>
+      </div>
+<% end %>
+
+<% @collection.links.each do |collection| %>
+      
+      <div class="brick link">
+
+        <div class="col-md-12">
+          <h2><%= collection.url %> </h2>
+          
+        </div>
+      </div>
+<% end %>
+
+<% @collection.notes.each do |collection| %>
+      
+      <div class="brick small">
+
+        <div class="col-md-12">
+          <h2><%= collection.name %> </h2>
+          <p><%= collection.content %></p>
+          
+        </div>
+      </div>
+<% end %>
+
+
+
+<div class="brick small new"> <a href="/collections/new"><i style="font-size: 100px; text-align:center;" class="icon-large icon-5x icon-pencil"></i></a> </div>
+
+</div>
+
+<script>
+
+$(document).on("dblclick", ".gridly .brick", function(event) {
+      var $this, size;
+      event.preventDefault();
+      event.stopPropagation();
+      $this = $(this);
+      $this.toggleClass('small');
+      $this.toggleClass('large');
+      if ($this.hasClass('small')) {
+        size = 140;
+      }
+      if ($this.hasClass('large')) {
+        size = 300;
+      }
+      $this.data('width', size);
+      $this.data('height', size);
+      return $('.gridly').gridly('layout');
+
+
+    });
+    
+  $('.gridly').gridly({
+    base: 60, // px 
+    gutter: 20, // px
+    columns: 12
+  });
+
+     var $p = $('.brick p');
+    var divh = $('.brick').height();
+    while ($p.outerHeight() > divh) {
+    $p.text(function (index, text) {
+        return text.replace(/\W*\s(\S)*$/, '...');
+    });
+
+   $('.brick.small').css("background-color", "red");
+    
+
+
+
+}
+</script>
+
+
+
+
+<%= link_to 'Edit', edit_collection_path(@collection) %> |
+<%= link_to 'Back', collections_path %>

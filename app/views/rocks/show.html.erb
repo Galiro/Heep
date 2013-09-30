@@ -1,0 +1,15 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Name:</b>
+  <%= @rock.name %>
+</p>
+
+<p>
+  <b>Collection:</b>
+  <%= @rock.collection_id %>
+</p>
+
+
+<%= link_to 'Edit', edit_rock_path(@rock) %> |
+<%= link_to 'Back', rocks_path %>

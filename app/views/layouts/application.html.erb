@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Heap</title>
+  <link href='http://fonts.googleapis.com/css?family=Josefin+Sans' rel='stylesheet' type='text/css'>
+  <%= stylesheet_link_tag    "application", :media => "all" %>
+  <%= javascript_include_tag "application" %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+
+<div class="pie">
+<div id="framecontent">
+    <div class="innertube ">
+    
+    <a href="/" style="color:white;"><h1 class="heep">Heep</h1></a>
+     <div class="portfolioFilter">
+          <ul>
+            <li><a href="#"  class="current">Cats</a></li>
+            <li><a href="#">Guitars</a></li>
+            <li><a href="#">Dogs</a></li>
+            <li><a href="#">Pie</a></li>
+            <li><a href="#">Max</a></li>
+          </ul>
+        </div>
+    
+    </div>
+</div>
+</div>
+
+<div id="maincontent">
+    <div class="innertube ">
+
+      <div class="container">
+      <%= yield %>
+      </div>
+
+    </div>
+</div>
+
+
+</body>
+</html>
